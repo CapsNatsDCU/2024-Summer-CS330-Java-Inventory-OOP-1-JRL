@@ -47,14 +47,14 @@ public class Armour extends Item {
     public Armour()
     {
         // Initialize all data members (including those inherited from Item)
-        this.name  = name;
-        this.stackable = false;
-        this.durability = 0;
-        this.defense = 0;
-        this.material = material
-        this.modifier = modifier;
-        this.modiferLevel = modiferLevel;
-        this.element = element;
+        name = "";
+        stackable = false;
+        int durability = 0;
+        int defense = 0;
+        String material = "";
+        String modifier = "";
+        int modiferLevel = 0;
+        String element = "";
     }
 
 
@@ -70,7 +70,7 @@ public class Armour extends Item {
         this.stackable = false;
         this.durability = src.durability;
         this.defense = src.defense;
-        this.material = src.material
+        this.material = src.material;
         this.modifier = src.modifier;
         this.modiferLevel = src.modiferLevel;
         this.element = src.element;
@@ -206,7 +206,15 @@ public class Armour extends Item {
     @Override
     public void read(Scanner snr)
     {
-        super.name   = snr.next();
+        this.name = snr.next();
+        this.stackable = false;
+        this.material = snr.next();
+        this.durability = snr.nextInt();
+        this.defense = snr.nextInt();
+        this.modifier = snr.next();
+        this.modiferLevel = snr.nextInt();
+        this.element = snr.next();
+
 
         // Complete this method
     }
@@ -223,7 +231,7 @@ public class Armour extends Item {
         rex.stackable = false;
         rex.durability = this.durability;
         rex.defense = this.defense;
-        rex.material = this.material
+        rex.material = this.material;
         rex.modifier = this.modifier;
         rex.modiferLevel = this.modiferLevel;
         rex.element = this.element;
@@ -236,9 +244,14 @@ public class Armour extends Item {
     @Override
     public String toString()
     {
-        StringBuilder str = new StringBuilder()
-        str.append("  nam: " + this.name)
-        return srt.toString;
+        StringBuilder str = new StringBuilder();
+        str.append("  Nme: " + this.name + "\n");
+        str.append("  Dur: " + this.durability + "\n");
+        str.append("  Def: " + this.defense + "\n");
+        str.append("  Mtl: " + this.material + "\n");
+        str.append("  Mdr: " + this.modifier + " (Lvl " + this.modiferLevel + ")" + "\n");
+        str.append("  Emt: " + this.element + "\n");
+        return str.toString();
     }
 }
 
