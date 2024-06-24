@@ -56,7 +56,7 @@ public class Armour extends Item {
         this.modiferLevel = modiferLevel;
         this.element = element;
     }
-}
+
 
     /**
      * Duplicate a piece of armour.
@@ -236,7 +236,9 @@ public class Armour extends Item {
     @Override
     public String toString()
     {
-        return "Implement This Function";
+        StringBuilder str = new StringBuilder()
+        str.append("  nam: " + this.name)
+        return srt.toString;
     }
 }
 
